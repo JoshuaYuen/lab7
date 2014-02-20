@@ -5,6 +5,10 @@ exports.projectInfo = function(req, res) { 
 
   // query for the specific project and
   // call the following callback
+  models.Project
+  .find("projectID")
+  .sort('date')
+  .exec(afterQuery);
 
   function afterQuery(err, projects) {
     if(err) console.log(err);
